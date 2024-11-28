@@ -18,10 +18,10 @@ class Controller
 
         if (string.IsNullOrWhiteSpace(productName))
         {
-            _view.DisplayMessage("\nName of the product cannot be null or empty, please write something");
+            _view.DisplayMessage("\nName of the product cannot be null or empty, please write the name of the product you would like to add.");
             return;
         }
-        //Adds a new product, or updates the quantity of an already existing product in _model.Products
+        //Add a new product, or updates the quantity of an already existing product in _model.Products
         _view.DisplayMessage("\nHow many of the product do you wish to add?");
         if (int.TryParse(Console.ReadLine(), out int quantity))
         {
@@ -54,8 +54,8 @@ class Controller
         {
             _view.DisplayMessage("\nWould you like to ADD or LIST products? EXIT to exit");
             //using Trim and ToUpper on null would give error. ensuring that if userinput is null that it gets converted
-            //to an empty string instead.
-            string? userChoice = (Console.ReadLine() ?? string.Empty).Trim().ToUpper();
+            //to an empty string instead with (Console.ReadLine() ?? string.Empty) so that the methods wont return an error
+            string userChoice = (Console.ReadLine() ?? string.Empty).Trim().ToUpper();
 
             switch (userChoice)
             {
@@ -68,7 +68,7 @@ class Controller
                     break;
                 case "EXIT":
                     isRunning = false;
-                    _view.DisplayMessage("\nExiting the store...");
+                    _view.DisplayMessage("\nExiting the program...");
                     break;
                 default:
                     _view.DisplayMessage("\nYou need to write either ADD, LIST or EXIT.");

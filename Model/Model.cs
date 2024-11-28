@@ -9,10 +9,10 @@ class Model
     {
         if (Products == null || Products.Count == 0)
         {
-            return "There are no products available";
+            return "==== No products available ====";
         }
         else
-            // Goes through every keyvaluepair in the dictionary to join them together in a string
+            // Goes through every keyvaluepair in the dictionary Products to join them together in a string
             // and prints each product on a new line
 
             return string.Join(Environment.NewLine, Products.Select(p => $"product: {p.Key} | stock: {p.Value}"));

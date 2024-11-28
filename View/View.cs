@@ -4,7 +4,7 @@ class View
     {
         Console.WriteLine("\n===== Displaying products =====");
         Console.WriteLine(model.ToString());
-        Console.WriteLine("=================================");
+        Console.WriteLine("===============================");
     }
 
     public void DisplayMessage(string message)
