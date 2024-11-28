@@ -53,7 +53,7 @@ class Controller
         while (isRunning)
         {
             _view.DisplayMessage("\nWould you like to ADD or LIST products? EXIT to exit");
-            //using Trim and ToUpper on null would give error. ensuring if userinput is null, that it gets converted
+            //using Trim and ToUpper on null would give error. ensuring that if userinput is null that it gets converted
             //to an empty string instead.
             string? userChoice = (Console.ReadLine() ?? string.Empty).Trim().ToUpper();
 
@@ -68,7 +68,7 @@ class Controller
                     break;
                 case "EXIT":
                     isRunning = false;
-                    _view.DisplayMessage("\nExiting the program...");
+                    _view.DisplayMessage("\nExiting the store...");
                     break;
                 default:
                     _view.DisplayMessage("\nYou need to write either ADD, LIST or EXIT.");
